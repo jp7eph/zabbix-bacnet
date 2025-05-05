@@ -4,7 +4,7 @@ const path = require('path'); // HTMLファイルを提供するために追加
 
 // --- 設定項目 (ご自身の環境に合わせて変更してください) ---
 const BACNET_DEVICE_IP = '127.0.0.1'; // ターゲットBACnetデバイスのIPアドレス
-const BACNET_OBJECT_TYPE = Bacstack.enum.ObjectType.ANALOG_INPUT;
+const BACNET_OBJECT_TYPE = Bacstack.enum.ObjectType.BINARY_INPUT;
 const BACNET_OBJECT_INSTANCE = 1; // 例: インスタンス番号
 const BACNET_PROPERTY_ID = Bacstack.enum.PropertyIdentifier.PRESENT_VALUE; // 通常は現在値 (85)
 const READ_INTERVAL_MS = 5000; // 値を読み取る間隔 (ミリ秒) 例: 5秒ごと

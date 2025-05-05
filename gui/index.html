@@ -46,12 +46,23 @@
                     errorElement.textContent = data.error;
                     errorElement.style.display = 'block';
                 } else {
-                    // 正常な値の表示 (小数点以下2桁に丸める例)
-                    let displayValue = data.value;
-                    if (typeof displayValue === 'number') {
-                        displayValue = displayValue.toFixed(2);
+
+                    // binary-inputで漏水を表示する場合
+                    if (data.value){
+                        valueElement.textContent = '漏水！！';
+                        valueElement.style.color = 'red';
+                    } else {
+                        valueElement.textContent = '正常';
+                        valueElement.style.color = 'black';
                     }
-                    valueElement.textContent = displayValue;
+
+                    // analog-inputで小数点を表示する場合
+                    // 正常な値の表示 (小数点以下2桁に丸める例)
+                    // let displayValue = data.value;
+                    // if (typeof displayValue === 'number') {
+                    //     displayValue = displayValue.toFixed(2);
+                    // }
+                    // valueElement.textContent = displayValue;
                     timestampElement.textContent = `Last updated: ${data.timestamp}`;
                     errorElement.style.display = 'none'; // エラーがなければ隠す
                 }
